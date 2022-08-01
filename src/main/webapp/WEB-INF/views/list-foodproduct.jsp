@@ -7,28 +7,26 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Customer List</title>
+<title>FoodProduct List</title>
 </head>
 <body>
 	<div id="table root">
 		<table>
 			<thead>
 				<tr>
-					<th>Customer Id</th>
-					<th>Name</th>
-					<th>Contact Number</th>
-					<th>Address</th>
-					<th>Account Number</th>
+					<th>Food Id</th>
+					<th>Food Name</th>
+					<th>Price</th>
+					<th>Quantity</th>
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="customer" items="${allcustomers}">
+				<c:forEach var="foodproduct" items="${allfoodproduct}">
 					<tr>
-						<td>${customer.customerId}</td>
-						<td>${customer.customerName}</td>
-						<td>${customer.contactNumber}</td>
-						<td>${customer.address}</td>
-						<td>${customer.accountNumber}</td>
+						<td>${foodproduct.foodId}</td>
+						<td>${foodproduct.foodName}</td>
+						<td>${foodproduct.foodPrice}</td>
+						<td>${foodproduct.foodQuantity}</td>
 					</tr>
 				</c:forEach>
 			</tbody>
