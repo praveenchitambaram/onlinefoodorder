@@ -20,53 +20,53 @@ import com.chainsys.onlinefoodorder.service.OrderDetailsService;
 
 public class OrderDetailsController {
 	@Autowired
-	OrderDetailsService orderdetailsservice;
+	OrderDetailsService orderDetailSservice;
 
 	@GetMapping("/list")
 	public String getOrderDetails(Model model) {
-		List<OrderDetails> allOrderDetails = orderdetailsservice.getOrderDetails();
+		List<OrderDetails> allOrderDetails = orderDetailSservice.getOrderDetails();
 		model.addAttribute("allorderdetails", allOrderDetails);
 		return "list-orderdetails";
 	}
 
 	@GetMapping("/addform")
 	public String showAddForm(Model model) {
-		Order theorderdetails = new Order();
-		model.addAttribute("addorder", theorderdetails);
+		Order theOrderDetails = new Order();
+		model.addAttribute("addorder", theOrderDetails);
 		return "add-order-form";
 	}
 
 	@PostMapping("/add")
-	public String addNewOrderDetails(@ModelAttribute("addorderdetails") OrderDetails theorderdetails) {
-		orderdetailsservice.save(theorderdetails);
+	public String addNewOrderDetails(@ModelAttribute("addorderdetails") OrderDetails theOrderDetails) {
+		orderDetailSservice.save(theOrderDetails);
 		return "redirect:/orderdetails/list";
 	}
 
 	@GetMapping("/updateform")
 	public String showUpdateForm(@RequestParam("orderid") int id, Model model) {
-		OrderDetails theorderdetails = orderdetailsservice.findByid(id);
-		model.addAttribute("updateorderdetails", theorderdetails);
+		OrderDetails theOrderDetails = orderDetailSservice.findByid(id);
+		model.addAttribute("updateorderdetails", theOrderDetails);
 		return "update-orderdetails-form";
 	}
 
 	@PostMapping("/updateorderdetail")
-	public String UpdateOrder(@ModelAttribute("updateorderdetails") OrderDetails theorderdetails) {
-		orderdetailsservice.save(theorderdetails);
+	public String UpdateOrder(@ModelAttribute("updateorderdetails") OrderDetails theOrderDetails) {
+		orderDetailSservice.save(theOrderDetails);
 		return "redirect:/orderdetails/list";
 
 	}
 
 	@GetMapping("/deleteorder")
 	public String deleteorderdetails(@RequestParam("orderid") int id) {
-		OrderDetails theorderdetails = orderdetailsservice.findByid(id);
-		orderdetailsservice.deleteById(id);
+		OrderDetails theOrderDetails = orderDetailSservice.findByid(id);
+		orderDetailSservice.deleteById(id);
 		return "redirect:/orderdetails/list";
 	}
 
 	@GetMapping("/findorderdetailsbyid")
 	public String findorderdetailsById(@RequestParam("orderid") int id, Model model) {
-		OrderDetails theorderdetails = orderdetailsservice.findByid(id);
-		model.addAttribute("findorderdetailsbyid", theorderdetails);
+		OrderDetails theOrderDetails = orderDetailSservice.findByid(id);
+		model.addAttribute("findorderdetailsbyid", theOrderDetails);
 		return "find-orderdetails-by-id-form";
 	}
 

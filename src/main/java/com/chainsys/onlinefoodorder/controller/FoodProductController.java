@@ -19,53 +19,53 @@ import com.chainsys.onlinefoodorder.service.FoodProductService;
 
 public class FoodProductController {
 	@Autowired
-	FoodProductService foodproductservice;
+	FoodProductService foodProductService;
 
 	@GetMapping("/list")
 	public String getFoodProduct(Model model) {
-		List<FoodProduct> allFoodProduct = foodproductservice.getFoodProduct();
+		List<FoodProduct> allFoodProduct = foodProductService.getFoodProduct();
 		model.addAttribute("allfoodproduct", allFoodProduct);
 		return "list-foodproduct";
 	}
 
 	@GetMapping("/addform")
 	public String showAddForm(Model model) {
-		FoodProduct thefoodproduct = new FoodProduct();
-		model.addAttribute("addfoodproduct", thefoodproduct);
+		FoodProduct theFoodProduct = new FoodProduct();
+		model.addAttribute("addfoodproduct", theFoodProduct);
 		return "add-foodproduct-form";
 	}
 
 	@PostMapping("/add")
 	public String addNewFoodProduct(@ModelAttribute("addfoodproduct") FoodProduct theFoodProduct) {
-		foodproductservice.save(theFoodProduct);
+		foodProductService.save(theFoodProduct);
 		return "redirect:/foodproduct/list";
 	}
 
 	@GetMapping("/updateform")
 	public String showUpdateForm(@RequestParam("foodid") int id, Model model) {
-		FoodProduct thefoodproduct = foodproductservice.findByid(id);
-		model.addAttribute("updatefoodproduct", thefoodproduct);
+		FoodProduct theFoodProduct = foodProductService.findByid(id);
+		model.addAttribute("updatefoodproduct", theFoodProduct);
 		return "update-foodproduct-form";
 	}
 
 	@PostMapping("/updatefp")
-	public String UpdateFoodProduct(@ModelAttribute("updatefoodproduct") FoodProduct thefoodproduct) {
-		foodproductservice.save(thefoodproduct);
+	public String UpdateFoodProduct(@ModelAttribute("updatefoodproduct") FoodProduct theFoodProduct) {
+		foodProductService.save(theFoodProduct);
 		return "redirect:/foodproduct/list";
 
 	}
 
 	@GetMapping("/deletefoodproduct")
 	public String deletefoodproduct(@RequestParam("foodproductid") int id) {
-		FoodProduct thefoodproduct = foodproductservice.findByid(id);
-		foodproductservice.deleteById(id);
+		FoodProduct theFoodProduct = foodProductService.findByid(id);
+		foodProductService.deleteById(id);
 		return "redirect:/foodproduct/list";
 	}
 
 	@GetMapping("/findfoodproductbyid")
 	public String findFoodProductById(@RequestParam("foodproductid") int id, Model model) {
-		FoodProduct thefoodproduct = foodproductservice.findByid(id);
-		model.addAttribute("findfoodproductbyid", thefoodproduct);
+		FoodProduct theFoodProduct = foodProductService.findByid(id);
+		model.addAttribute("findfoodproductbyid", theFoodProduct);
 		return "find-foodproduct-by-id-form";
 	}
 

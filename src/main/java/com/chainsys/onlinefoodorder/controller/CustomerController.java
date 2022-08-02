@@ -19,11 +19,11 @@ import com.chainsys.onlinefoodorder.service.CustomerService;
 
 public class CustomerController {
 	@Autowired
-	CustomerService customerservice;
+	CustomerService customerService;
 
 	@GetMapping("/list")
 	public String getCustomer(Model model) {
-		List<Customer> allCustomer = customerservice.getCustomers();
+		List<Customer> allCustomer = customerService.getCustomers();
 		model.addAttribute("allcustomers", allCustomer);
 		return "list-customers";
 	}
@@ -37,34 +37,34 @@ public class CustomerController {
 
 	@PostMapping("/add")
 	public String addNewCustomer(@ModelAttribute("addcustomer") Customer theCustomer) {
-		customerservice.save(theCustomer);
+		customerService.save(theCustomer);
 		return "redirect:/customer/list";
 	}
 
 	@GetMapping("/updateform")
 	public String showUpdateForm(@RequestParam("customerid") int id, Model model) {
-		Customer theCustomer = customerservice.findByid(id);
+		Customer theCustomer = customerService.findByid(id);
 		model.addAttribute("updatecustomer", theCustomer);
 		return "update-customer-form";
 	}
 
 	@PostMapping("/updatecus")
-	public String UpdateCustomer(@ModelAttribute("updatecustomer") Customer theCus) {
-		customerservice.save(theCus);
+	public String UpdateCustomer(@ModelAttribute("updatecustomer") Customer theCustomer) {
+		customerService.save(theCustomer);
 		return "redirect:/customer/list";
 
 	}
 
 	@GetMapping("/deletecustomer")
 	public String deleteCustomer(@RequestParam("customerid") int id) {
-		Customer thecustomer = customerservice.findByid(id);
-		customerservice.deleteById(id);
+		Customer theCustomer = customerService.findByid(id);
+		customerService.deleteById(id);
 		return "redirect:/customer/list";
 	}
 
 	@GetMapping("/findcustomerbyid")
 	public String findCustomerById(@RequestParam("customerid") int id, Model model) {
-		Customer theCustomer = customerservice.findByid(id);
+		Customer theCustomer = customerService.findByid(id);
 		model.addAttribute("findcustomerbyid", theCustomer);
 		return "find-customer-by-id-form";
 	}

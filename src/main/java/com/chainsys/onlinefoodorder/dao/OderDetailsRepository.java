@@ -9,11 +9,11 @@ import com.chainsys.onlinefoodorder.model.OrderDetails;
 
 @Repository
 public interface OderDetailsRepository extends CrudRepository<OrderDetails, Integer> {
-	OrderDetails findById(int orderid);
+	OrderDetails findById(int orderId);
 
-	OrderDetails save(OrderDetails orderdetails);
+	OrderDetails save(OrderDetails orderDetails);
 
-	void deleteById(int orderid);
+	void deleteById(int orderId);
 
 	List<OrderDetails> findAll();
 

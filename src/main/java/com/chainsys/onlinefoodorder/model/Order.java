@@ -1,7 +1,7 @@
 package com.chainsys.onlinefoodorder.model;
 
+import java.util.Calendar;
 import java.util.Date;
-import java.util.TimeZone;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,9 +17,9 @@ public class Order {
 	@Column(name = "cust_id")
 	private int custamerId;
 	@Column(name = "ord_date")
-	private Date orderDate;
+	private String orderDate;
 	@Column(name = "ord_time")
-	private TimeZone orderTime;
+	private String orderTime;
 	@Column(name = "payment_type")
 	private String paymentType;
 	@Column(name = "order_amount")
@@ -31,7 +31,7 @@ public class Order {
 	@Column(name = "delivery_date")
 	private Date deliveryDate;
 	@Column(name = "delivery_time")
-	private TimeZone deliveryTime;
+	private String deliveryTime;
 
 	public int getOrderId() {
 		return orderId;
@@ -49,19 +49,24 @@ public class Order {
 		this.custamerId = custamerId;
 	}
 
-	public Date getOrderDate() {
+	public String getOrderDate() {
 		return orderDate;
 	}
 
-	public void setOrderDate(Date orderDate) {
+	public void setOrderDate() {
+		Calendar calendar = Calendar.getInstance();
+		String orderDate = calendar.get(Calendar.DATE) + "/" + (calendar.get(Calendar.MONTH) + 1) + "/"
+				+ calendar.get(Calendar.YEAR);
 		this.orderDate = orderDate;
 	}
 
-	public TimeZone getOrderTime() {
+	public String getOrderTime() {
 		return orderTime;
 	}
 
-	public void setOrderTime(TimeZone orderTime) {
+	public void setOrderTime() {
+		Calendar calendar = Calendar.getInstance();
+		String orderTime = calendar.get(Calendar.HOUR) + ":" + calendar.get(Calendar.MINUTE);
 		this.orderTime = orderTime;
 	}
 
@@ -105,11 +110,11 @@ public class Order {
 		this.deliveryDate = deliveryDate;
 	}
 
-	public TimeZone getDeliveryTime() {
+	public String getDeliveryTime() {
 		return deliveryTime;
 	}
 
-	public void setDeliveryTime(TimeZone deliveryTime) {
+	public void setDeliveryTime(String deliveryTime) {
 		this.deliveryTime = deliveryTime;
 	}
 

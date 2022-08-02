@@ -13,25 +13,25 @@ import com.chainsys.onlinefoodorder.model.FoodProduct;
 @Service
 public class FoodProductService {
 	@Autowired
-	private FoodProductRepository foodproductrepository;
+	private FoodProductRepository foodProductRepository;
 
 	public List<FoodProduct> getFoodProduct() {
-		List<FoodProduct> listfoodproduct = foodproductrepository.findAll();
-		return listfoodproduct;
+		List<FoodProduct> listFoodProduct = foodProductRepository.findAll();
+		return listFoodProduct;
 	}
 
-	public FoodProduct save(FoodProduct foodproduct) {
+	public FoodProduct save(FoodProduct foodProduct) {
 
-		return foodproductrepository.save(foodproduct);
+		return foodProductRepository.save(foodProduct);
 	}
 
 	public FoodProduct findByid(int id) {
-		return foodproductrepository.findById(id);
+		return foodProductRepository.findById(id);
 	}
 
 	@Transactional
 	public void deleteById(int id) {
-		foodproductrepository.deleteById(id);
+		foodProductRepository.deleteById(id);
 	}
 
 }

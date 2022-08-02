@@ -13,25 +13,25 @@ import com.chainsys.onlinefoodorder.model.Order;
 @Service
 public class OrderService {
 	@Autowired
-	private OrderRepository orderrepository;
+	private OrderRepository orderRepository;
 
 	public List<Order> getOrder() {
-		List<Order> listOrder = orderrepository.findAll();
+		List<Order> listOrder = orderRepository.findAll();
 		return listOrder;
 	}
 
 	public Order save(Order order) {
 
-		return orderrepository.save(order);
+		return orderRepository.save(order);
 	}
 
 	public Order findByid(int id) {
-		return orderrepository.findById(id);
+		return orderRepository.findById(id);
 	}
 
 	@Transactional
 	public void deleteById(int id) {
-		orderrepository.deleteById(id);
+		orderRepository.deleteById(id);
 	}
 
 }

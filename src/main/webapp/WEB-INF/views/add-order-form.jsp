@@ -26,18 +26,6 @@
 					</div>
 				</div>
 				<div>
-					<label for="orderDate">Order Date</label>
-					<div>
-						<form:input path="orderDate" />
-					</div>
-				</div>
-				<div>
-					<label for="orderTime">Order Time</label>
-					<div>
-						<form:input path="orderTime" />
-					</div>
-				</div>
-				<div>
 					<label for="paymentType">Payment Type</label>
 					<div>
 						<form:input path="paymentType" />

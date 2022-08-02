@@ -13,25 +13,25 @@ import com.chainsys.onlinefoodorder.model.OrderDetails;
 @Service
 public class OrderDetailsService {
 	@Autowired
-	private OderDetailsRepository oderdetailsrepository;
+	private OderDetailsRepository oderDetailsRepository;
 
 	public List<OrderDetails> getOrderDetails() {
-		List<OrderDetails> listOrderDetails = oderdetailsrepository.findAll();
+		List<OrderDetails> listOrderDetails = oderDetailsRepository.findAll();
 		return listOrderDetails;
 	}
 
 	public OrderDetails save(OrderDetails orderdetails) {
 
-		return oderdetailsrepository.save(orderdetails);
+		return oderDetailsRepository.save(orderdetails);
 	}
 
 	public OrderDetails findByid(int id) {
-		return oderdetailsrepository.findById(id);
+		return oderDetailsRepository.findById(id);
 	}
 
 	@Transactional
 	public void deleteById(int id) {
-		oderdetailsrepository.deleteById(id);
+		oderDetailsRepository.deleteById(id);
 	}
 
 }

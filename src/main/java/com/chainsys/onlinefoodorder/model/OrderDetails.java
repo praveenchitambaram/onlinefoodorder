@@ -16,7 +16,7 @@ public class OrderDetails {
 	@Column(name = "quantity")
 	private int foodQuantity;
 	@Column(name = "price")
-	private float Price;
+	private float price;
 	@Column(name = "gst")
 	private int gst;
 	@Column(name = "amount")
@@ -47,11 +47,11 @@ public class OrderDetails {
 	}
 
 	public float getPrice() {
-		return Price;
+		return price;
 	}
 
 	public void setPrice(float price) {
-		Price = price;
+		this.price = price;
 	}
 
 	public int getGst() {

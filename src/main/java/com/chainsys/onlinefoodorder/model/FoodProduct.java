@@ -15,7 +15,7 @@ public class FoodProduct {
 	private String foodName;
 	@Column(name = "price")
 	private float foodPrice;
-	@Column(name = "quantity")
+	@Column(name ="quantity")
 	private int foodQuantity;
 
 	public int getFoodId() {

@@ -12,7 +12,7 @@
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="" method="post" modelAttribute="findcustomerbyid">
+			<form:form action="" method="post" modelAttribute="findfoodproductbyid">
 				<div>
 					<label for="foodId">Food Id</label>
 					<div>

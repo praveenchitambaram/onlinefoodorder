@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Add FoodProduct</title>
+<title>Add Food Product</title>
 </head>
 <body>
 	<div id="root">
@@ -29,12 +29,6 @@
 					<label for="foodPrice">Food Price</label>
 					<div>
 						<form:input path="foodPrice" />
-					</div>
-				</div>
-				<div>
-					<label for="quantity">Quantity</label>
-					<div>
-						<form:input path="quantity" />
 					</div>
 				</div>
 				<div>

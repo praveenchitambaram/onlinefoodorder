@@ -32,12 +32,6 @@
 					</div>
 				</div>
 				<div>
-					<label for="quantity">Quantity</label>
-					<div>
-						<form:input path="quantity" />
-					</div>
-				</div>
-				<div>
 					<label for="foodQuantity">Food Quantity</label>
 					<div>
 						<form:input path="foodQuantity" />

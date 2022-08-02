@@ -33,9 +33,9 @@
 					</div>
 				</div>
 				<div>
-					<label for="Price">Price</label>
+					<label for="price">Price</label>
 					<div>
-						<form:input path="Price" />
+						<form:input path="price" />
 					</div>
 				</div>
 				<div>

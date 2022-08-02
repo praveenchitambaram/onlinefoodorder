@@ -11,9 +11,9 @@ import com.chainsys.onlinefoodorder.model.FoodProduct;
 public interface FoodProductRepository extends CrudRepository<FoodProduct, Integer> {
 	FoodProduct findById(int foodid);
 
-	FoodProduct save(FoodProduct foodproduct);
+	FoodProduct save(FoodProduct foodProduct);
 
-	void deleteById(int foodid);
+	void deleteById(int foodId);
 
 	List<FoodProduct> findAll();
 }

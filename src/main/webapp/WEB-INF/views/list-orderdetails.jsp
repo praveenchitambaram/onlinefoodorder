@@ -26,7 +26,7 @@
 						<td>${orderDetails.orderId}</td>
 						<td>${orderDetails.foodId}</td>
 						<td>${orderDetails.foodQuantity}</td>
-						<td>${orderDetails.Price}</td>
+						<td>${orderDetails.price}</td>
 						<td>${orderDetails.gst}</td>
 						<td>${orderDetails.orderId}</td>
 					</tr>
