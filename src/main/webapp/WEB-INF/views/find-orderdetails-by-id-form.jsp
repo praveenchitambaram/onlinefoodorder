@@ -14,39 +14,63 @@
 		<div id="form">
 			<form:form action="" method="post" modelAttribute="findcustomerbyid">
 				<div>
-					<label for="orderId">order Id</label>
+					<label for="orderId">Order Id</label>
 					<div>
 						<form:input path="orderId" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="foodId">Food Id</label>
+					<label for="customerId">Customer Id</label>
 					<div>
-						<form:input path="foodId" readonly="true" />
+						<form:input path="customerId" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="foodQuantity">Food Quantity</label>
+					<label for="orderDate">Order Date</label>
 					<div>
-						<form:input path="foodQuantity" readonly="true" />
+						<form:input path="orderDate" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="price">Price</label>
+					<label for="orderTime">Order Time</label>
 					<div>
-						<form:input path="price" />
+						<form:input path="orderTime" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="gst">gst</label>
+					<label for="paymentType">Payment Type</label>
 					<div>
-						<form:input path="gst" />
+						<form:input path="paymentType" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="totalAmount">Total Amount</label>
+					<label for="orderAmount">Order Amount</label>
 					<div>
-						<form:input path="totalAmount" />
+						<form:input path="orderAmount" readonly="true" />
+					</div>
+				</div>
+				<div>
+					<label for="deliveryAmount">Delivery Amount</label>
+					<div>
+						<form:input path="deliveryAmount" readonly="true" />
+					</div>
+				</div>
+				<div>
+					<label for="netAmount">net Amount</label>
+					<div>
+						<form:input path="netAmount" readonly="true" />
+					</div>
+				</div>
+				<div>
+					<label for="deliveryDate">delivery Date</label>
+					<div>
+						<form:input path="deliveryDate" readonly="true" />
+					</div>
+				</div>
+				<div>
+					<label for="deliveryTime">Delivery Time</label>
+					<div>
+						<form:input path="deliveryTime" readonly="true" />
 					</div>
 				</div>
 			</form:form>

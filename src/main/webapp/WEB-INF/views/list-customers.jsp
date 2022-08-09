@@ -18,7 +18,7 @@
 					<th>Name</th>
 					<th>Contact Number</th>
 					<th>Address</th>
-					<th>Account Number</th>
+					<th>Email</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -28,7 +28,7 @@
 						<td>${customer.customerName}</td>
 						<td>${customer.contactNumber}</td>
 						<td>${customer.address}</td>
-						<td>${customer.accountNumber}</td>
+						<td>${customer.email}</td>
 					</tr>
 				</c:forEach>
 			</tbody>

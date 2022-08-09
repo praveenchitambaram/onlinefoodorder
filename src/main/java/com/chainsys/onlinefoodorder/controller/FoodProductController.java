@@ -2,9 +2,12 @@ package com.chainsys.onlinefoodorder.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,7 +39,11 @@ public class FoodProductController {
 	}
 
 	@PostMapping("/add")
-	public String addNewFoodProduct(@ModelAttribute("addfoodproduct") FoodProduct theFoodProduct) {
+	public String addNewFoodProduct(@Valid@ModelAttribute("addfoodproduct") FoodProduct theFoodProduct,
+			Errors errors) {
+		if (errors.hasErrors()) {
+			return "add-foodproduct-form";
+		}
 		foodProductService.save(theFoodProduct);
 		return "redirect:/foodproduct/list";
 	}
@@ -49,7 +56,11 @@ public class FoodProductController {
 	}
 
 	@PostMapping("/updatefp")
-	public String UpdateFoodProduct(@ModelAttribute("updatefoodproduct") FoodProduct theFoodProduct) {
+	public String UpdateFoodProduct(@Valid@ModelAttribute("updatefoodproduct") FoodProduct theFoodProduct,
+			Errors errors) {
+		if (errors.hasErrors()) {
+			return "update-foodproduct-form";
+		}
 		foodProductService.save(theFoodProduct);
 		return "redirect:/foodproduct/list";
 

@@ -12,7 +12,7 @@
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="" method="post" modelAttribute="findcustomerbyid">
+			<form:form action=" " method="post" modelAttribute="findcustomerbyid">
 				<div>
 					<label for="customerId">Customer Id</label>
 					<div>
@@ -38,9 +38,9 @@
 					</div>
 				</div>
 				<div>
-					<label for="accountNumber">Accound Number</label>
+					<label for="email">Email</label>
 					<div>
-						<form:input path="accountNumber" readonly="true" />
+						<form:input path="email" readonly="true" />
 					</div>
 			</form:form>
 		</div>

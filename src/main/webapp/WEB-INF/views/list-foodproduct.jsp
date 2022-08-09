@@ -17,7 +17,6 @@
 					<th>Food Id</th>
 					<th>Food Name</th>
 					<th>Price</th>
-					<th>Quantity</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -26,11 +25,15 @@
 						<td>${foodproduct.foodId}</td>
 						<td>${foodproduct.foodName}</td>
 						<td>${foodproduct.foodPrice}</td>
-						<td>${foodproduct.foodQuantity}</td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
+		<div>
+			<h3>
+				<a href="/order/addform">Add Orders</a>
+			</h3>
+		</div>
 	</div>
 </body>
 </html>

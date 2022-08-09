@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <!DOCTYPE html>
@@ -8,6 +7,22 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Add Order</title>
+<style>
+body {
+	background-image: url();
+	height: 768px;
+	width: 1366px;
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+
+.text-danger {
+	color: #e80c4d;
+	font-size: 0.9em;
+}
+</style>
 </head>
 <body>
 	<div id="root">
@@ -20,9 +35,21 @@
 					</div>
 				</div>
 				<div>
-					<label for="custamerId">customer Id</label>
+					<label for="customerId">customer Id</label>
 					<div>
-						<form:input path="custamerId" />
+						<form:input path="customerId" />
+					</div>
+				</div>
+				<div>
+					<label for="foodId">Food Id </label>
+					<div>
+						<form:input path="foodId" />
+					</div>
+				</div>
+				<div>
+					<label for="foodQuantity">Food Quantity </label>
+					<div>
+						<form:input path="foodQuantity" />
 					</div>
 				</div>
 				<div>
@@ -31,34 +58,29 @@
 						<form:input path="paymentType" />
 					</div>
 				</div>
+				<form:errors path="paymentType" cssClass="text-danger" />
 				<div>
-					<label for="orderAmount">Order Amount</label>
+					<label for="price">Price</label>
 					<div>
-						<form:input path="orderAmount" />
+						<form:input path="price" />
 					</div>
 				</div>
 				<div>
-					<label for="deliveryAmount">Delivery Amount</label>
+					<label for="totalAmount">Total Amount</label>
 					<div>
-						<form:input path="deliveryAmount" />
+						<form:input path="totalAmount" />
 					</div>
 				</div>
 				<div>
-					<label for="netAmount">Net Amount</label>
+					<label for="orderDate">Order Date</label>
 					<div>
-						<form:input path="netAmount" />
+						<form:input path="orderDate" />
 					</div>
 				</div>
 				<div>
-					<label for="deliveryDate">Delivery Date</label>
+					<label for="orderTime">Order Time</label>
 					<div>
-						<form:input path="deliveryDate" />
-					</div>
-				</div>
-				<div>
-					<label for="deliveryTime">Delivery Time</label>
-					<div>
-						<form:input path="deliveryTime" />
+						<form:input path="orderTime" />
 					</div>
 				</div>
 				<div>
@@ -66,7 +88,6 @@
 				</div>
 			</form:form>
 		</div>
-	</div>
 	</div>
 </body>
 </html>

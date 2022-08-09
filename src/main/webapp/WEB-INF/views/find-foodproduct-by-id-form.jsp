@@ -31,12 +31,6 @@
 						<form:input path="foodPrice" readonly="true" />
 					</div>
 				</div>
-				<div>
-					<label for="foodQuantity">Food Quantity</label>
-					<div>
-						<form:input path="foodQuantity" />
-					</div>
-				</div>
 			</form:form>
 		</div>
 	</div>

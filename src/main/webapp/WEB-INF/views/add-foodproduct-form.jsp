@@ -8,6 +8,22 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Add Food Product</title>
+<style>
+body {
+	background-image: url();
+	height: 768px;
+	width: 1366px;
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+
+.text-danger {
+	color: #e80c4d;
+	font-size: 0.9em;
+}
+</style>
 </head>
 <body>
 	<div id="root">
@@ -25,6 +41,7 @@
 						<form:input path="foodName" />
 					</div>
 				</div>
+				<form:errors path="foodName" cssClass="text-danger" />
 				<div>
 					<label for="foodPrice">Food Price</label>
 					<div>
@@ -32,17 +49,10 @@
 					</div>
 				</div>
 				<div>
-					<label for="foodQuantity">Food Quantity</label>
-					<div>
-						<form:input path="foodQuantity" />
-					</div>
-				</div>
-				<div>
 					<form:button>Add New</form:button>
 				</div>
 			</form:form>
 		</div>
-	</div>
 	</div>
 </body>
 </html>

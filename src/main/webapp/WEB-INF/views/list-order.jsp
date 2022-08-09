@@ -9,19 +9,19 @@
 </head>
 <body>
 	<div id="table root">
-		<table>
+		<table border="2" width="100%" cellpadding="2">
 			<thead>
 				<tr>
 					<th>Order Id</th>
 					<th>Customer Id</th>
+					<th>Food Id</th>
+					<th>food Quantity</th>
+					<th>Payment Type</th>
+					<th>Food Price</th>
+					<th>Total Amount</th>
 					<th>Order Date</th>
 					<th>Order Time</th>
-					<th>Payment Type</th>
-					<th>Order Amount</th>
-					<th>Delivery Amount</th>
-					<th>Net Amount</th>
-					<th>Dlivery Date</th>
-					<th>DeliveryTime</th>
+					<th>Cancel Order</th>
 
 				</tr>
 			</thead>
@@ -29,15 +29,16 @@
 				<c:forEach var="order" items="${allorder}">
 					<tr>
 						<td>${order.orderId}</td>
-						<td>${order.custamerId}</td>
+						<td>${order.customerId}</td>
+						<td>${order.foodId}</td>
+						<td>${order.foodQuantity}</td>
+						<td>${order.paymentType}</td>
+						<td>${order.price}</td>
+						<td>${order.totalAmount}</td>
 						<td>${order.orderDate}</td>
 						<td>${order.orderTime}</td>
-						<td>${order.paymentType}</td>
-						<td>${order.orderAmount}</td>
-						<td>${order.deliveryAmount}</td>
-						<td>${order.netAmount}</td>
-						<td>${order.deliveryDate}</td>
-						<td>${order.deliveryTime}</td>
+						<td><a href="/order/deleteorder?orderId=${order.orderId}">Cancel
+								Orders</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

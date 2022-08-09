@@ -7,25 +7,25 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.chainsys.onlinefoodorder.dao.OderDetailsRepository;
-import com.chainsys.onlinefoodorder.model.OrderDetails;
+import com.chainsys.onlinefoodorder.dao.OrderDetailsRepository;
+import com.chainsys.onlinefoodorder.model.OrderDetail;
 
 @Service
 public class OrderDetailsService {
 	@Autowired
-	private OderDetailsRepository oderDetailsRepository;
+	private OrderDetailsRepository oderDetailsRepository;
 
-	public List<OrderDetails> getOrderDetails() {
-		List<OrderDetails> listOrderDetails = oderDetailsRepository.findAll();
+	public List<OrderDetail> getOrderDetails() {
+		List<OrderDetail> listOrderDetails = oderDetailsRepository.findAll();
 		return listOrderDetails;
 	}
 
-	public OrderDetails save(OrderDetails orderdetails) {
+	public OrderDetail save(OrderDetail orderdetails) {
 
 		return oderDetailsRepository.save(orderdetails);
 	}
 
-	public OrderDetails findByid(int id) {
+	public OrderDetail findByid(int id) {
 		return oderDetailsRepository.findById(id);
 	}
 

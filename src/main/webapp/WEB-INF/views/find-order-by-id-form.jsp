@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <!DOCTYPE html>
@@ -16,62 +15,57 @@
 				<div>
 					<label for="orderId">Order Id</label>
 					<div>
-						<form:input path="orderId" readonly="true" />
+						<form:input path="orderId" readonly="true"/>
 					</div>
 				</div>
 				<div>
-					<label for="custamerId">Custamer Id</label>
+					<label for="customerId">customer Id</label>
 					<div>
-						<form:input path="custamerId" readonly="true" />
+						<form:input path="customerId" readonly="true"/>
 					</div>
 				</div>
 				<div>
-					<label for="orderDate">Order Date</label>
+					<label for="foodId">Food Id </label>
 					<div>
-						<form:input path="orderDate" readonly="true" />
+						<form:input path="foodId" readonly="true"/>
 					</div>
 				</div>
 				<div>
-					<label for="orderTime">Order Time</label>
+					<label for="foodQuantity">Food Quantity </label>
 					<div>
-						<form:input path="orderTime" />
+						<form:input path="foodQuantity" readonly="true"/>
 					</div>
 				</div>
 				<div>
 					<label for="paymentType">Payment Type</label>
 					<div>
-						<form:input path="paymentType" readonly="true" />
+						<form:input path="paymentType" readonly="true"/>
 					</div>
 				</div>
 				<div>
-					<label for="orderAmount">Order Amount</label>
+					<label for="price">Price</label>
 					<div>
-						<form:input path="orderAmount" />
+						<form:input path="price" readonly="true"/>
 					</div>
 				</div>
 				<div>
-					<label for="deliveryAmount">Delivery Amount</label>
+					<label for="totalAmount">Total Amount</label>
 					<div>
-						<form:input path="deliveryAmount" />
+						<form:input path="totalAmount" readonly="true"/>
 					</div>
 				</div>
 				<div>
-					<label for="netAmount">Net Amount</label>
+					<label for="orderDate">Order Date</label>
 					<div>
-						<form:input path="netAmount" />
+						<form:input path="orderDate" readonly="true"/>
 					</div>
 				</div>
 				<div>
-					<label for="deliveryDate">Delivery Date</label>
+					<label for="orderTime">Order Time</label>
 					<div>
-						<form:input path="deliveryDate" />
+						<form:input path="orderTime" readonly="true"/>
 					</div>
 				</div>
-				<div>
-					<label for="deliveryTime">Delivery Time</label>
-					<div>
-						<form:input path="deliveryTime" />
-					</div>
 			</form:form>
 		</div>
 	</div>

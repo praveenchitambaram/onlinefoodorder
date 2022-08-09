@@ -1,12 +1,16 @@
 package com.chainsys.onlinefoodorder.model;
 
-import java.util.Calendar;
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "orders")
@@ -15,23 +19,35 @@ public class Order {
 	@Column(name = "order_id")
 	private int orderId;
 	@Column(name = "cust_id")
-	private int custamerId;
+	private int customerId;
+	@Column(name = "food_id")
+	private int foodId;
+	@Column(name = "quantity")
+	private int foodQuantity;
+	@Column(name = "payment_type")
+	@NotBlank(message = "*Name can't be Empty")
+	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid name ")
+	private String paymentType;
+	@Column(name = "price")
+	private float price;
+	@Column(name = "amount")
+	private float totalAmount;
 	@Column(name = "ord_date")
-	private String orderDate;
+	private Date orderDate;
 	@Column(name = "ord_time")
 	private String orderTime;
-	@Column(name = "payment_type")
-	private String paymentType;
-	@Column(name = "order_amount")
-	private float orderAmount;
-	@Column(name = "delivery_amount")
-	private float deliveryAmount;
-	@Column(name = "net_amount")
-	private float netAmount;
-	@Column(name = "delivery_date")
-	private Date deliveryDate;
-	@Column(name = "delivery_time")
-	private String deliveryTime;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "cust_id", nullable = false, insertable = false, updatable = false)
+	private Customer customer;
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
 
 	public int getOrderId() {
 		return orderId;
@@ -41,33 +57,28 @@ public class Order {
 		this.orderId = orderId;
 	}
 
-	public int getCustamerId() {
-		return custamerId;
+	public int getCustomerId() {
+		return customerId;
 	}
 
-	public void setCustamerId(int custamerId) {
-		this.custamerId = custamerId;
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
 	}
 
-	public String getOrderDate() {
-		return orderDate;
+	public int getFoodId() {
+		return foodId;
 	}
 
-	public void setOrderDate() {
-		Calendar calendar = Calendar.getInstance();
-		String orderDate = calendar.get(Calendar.DATE) + "/" + (calendar.get(Calendar.MONTH) + 1) + "/"
-				+ calendar.get(Calendar.YEAR);
-		this.orderDate = orderDate;
+	public void setFoodId(int foodId) {
+		this.foodId = foodId;
 	}
 
-	public String getOrderTime() {
-		return orderTime;
+	public int getFoodQuantity() {
+		return foodQuantity;
 	}
 
-	public void setOrderTime() {
-		Calendar calendar = Calendar.getInstance();
-		String orderTime = calendar.get(Calendar.HOUR) + ":" + calendar.get(Calendar.MINUTE);
-		this.orderTime = orderTime;
+	public void setFoodQuantity(int foodQuantity) {
+		this.foodQuantity = foodQuantity;
 	}
 
 	public String getPaymentType() {
@@ -78,44 +89,36 @@ public class Order {
 		this.paymentType = paymentType;
 	}
 
-	public float getOrderAmount() {
-		return orderAmount;
+	public float getPrice() {
+		return price;
 	}
 
-	public void setOrderAmount(float orderAmount) {
-		this.orderAmount = orderAmount;
+	public void setPrice(float price) {
+		this.price = price;
 	}
 
-	public float getDeliveryAmount() {
-		return deliveryAmount;
+	public float getTotalAmount() {
+		return totalAmount;
 	}
 
-	public void setDeliveryAmount(float deliveryAmount) {
-		this.deliveryAmount = deliveryAmount;
+	public void setTotalAmount(float totalAmount) {
+		this.totalAmount = totalAmount;
 	}
 
-	public float getNetAmount() {
-		return netAmount;
+	public Date getOrderDate() {
+		return orderDate;
 	}
 
-	public void setNetAmount(float netAmount) {
-		this.netAmount = netAmount;
+	public void setOrderDate(Date orderDate) {
+		this.orderDate = orderDate;
 	}
 
-	public Date getDeliveryDate() {
-		return deliveryDate;
+	public String getOrderTime() {
+		return orderTime;
 	}
 
-	public void setDeliveryDate(Date deliveryDate) {
-		this.deliveryDate = deliveryDate;
-	}
-
-	public String getDeliveryTime() {
-		return deliveryTime;
-	}
-
-	public void setDeliveryTime(String deliveryTime) {
-		this.deliveryTime = deliveryTime;
+	public void setOrderTime(String orderTime) {
+		this.orderTime = orderTime;
 	}
 
 }
