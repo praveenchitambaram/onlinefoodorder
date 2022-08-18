@@ -45,7 +45,7 @@ public class FoodProductController {
 			return "add-foodproduct-form";
 		}
 		foodProductService.save(theFoodProduct);
-		return "redirect:/foodproduct/list";
+		return "redirect:/foodproduct/foodlist";
 	}
 
 	@GetMapping("/updateform")
@@ -55,14 +55,14 @@ public class FoodProductController {
 		return "update-foodproduct-form";
 	}
 
-	@PostMapping("/updatefp")
+	@PostMapping("/updatefood")
 	public String UpdateFoodProduct(@Valid@ModelAttribute("updatefoodproduct") FoodProduct theFoodProduct,
 			Errors errors) {
 		if (errors.hasErrors()) {
 			return "update-foodproduct-form";
 		}
 		foodProductService.save(theFoodProduct);
-		return "redirect:/foodproduct/list";
+		return "redirect:/foodproduct/foodlist";
 
 	}
 
@@ -70,7 +70,7 @@ public class FoodProductController {
 	public String deletefoodproduct(@RequestParam("foodproductid") int id) {
 		FoodProduct theFoodProduct = foodProductService.findByid(id);
 		foodProductService.deleteById(id);
-		return "redirect:/foodproduct/list";
+		return "redirect:/foodproduct/foodlist";
 	}
 
 	@GetMapping("/findfoodproductbyid")
@@ -79,5 +79,11 @@ public class FoodProductController {
 		model.addAttribute("findfoodproductbyid", theFoodProduct);
 		return "find-foodproduct-by-id-form";
 	}
+	@GetMapping("/foodlist")
+	public String getFood(Model model) {
+		List<FoodProduct> allFoodProduct = foodProductService.getFoodProduct();
+		model.addAttribute("allfoodproduct", allFoodProduct);
+		return "list-food";
 
+}
 }

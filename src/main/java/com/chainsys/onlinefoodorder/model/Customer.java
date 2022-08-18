@@ -5,20 +5,24 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "Customer")
 public class Customer {
-	@Id
+	
+	@Id@GeneratedValue(strategy = GenerationType.AUTO, generator = "customer_id")
+	@SequenceGenerator(name = "customer_id", sequenceName = "customer_id", allocationSize = 1)
 	@Column(name = "cust_id")
 	private int customerId;
 	@Column(name = "cust_name")
@@ -29,12 +33,11 @@ public class Customer {
 	@Column(name = "contact_num")
 	@Digits(message = "Invalid Mobile Number", integer = 10, fraction = 0)
 	private long contactNumber;
-	@Column(name = "Address")
-	@NotEmpty(message = "Address is required")
-	private String address;
 	@Column(name = "email")
 	@Email(message = "Invalid Email", regexp = "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}")
 	private String email;
+	@Column(name = "password")
+	private String password;
 
 	@OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
 	private List<Order> orders;
@@ -71,20 +74,20 @@ public class Customer {
 		this.contactNumber = contactNumber;
 	}
 
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
 	public String getEmail() {
 		return email;
 	}
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 }

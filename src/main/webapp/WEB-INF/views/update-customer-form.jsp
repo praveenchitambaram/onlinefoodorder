@@ -3,27 +3,10 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Update Customer</title>
-<style>
-body {
-	background-image:
-		url();
-	height: 768px;
-	width: 1366px;
-	background-position: center top;
-	background-repeat: no-repeat;
-	background-size: cover;
-	position: relative;
-}
-
-.text-danger {
-	color: #e80c4d;
-	font-size: 0.9em;
-}
-</style>
 </head>
 <body>
 	<div id="root">

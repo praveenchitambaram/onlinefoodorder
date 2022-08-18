@@ -3,7 +3,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Update Order</title>
@@ -64,6 +64,12 @@ body {
 					<label for="price">Price</label>
 					<div>
 						<form:input path="price" />
+					</div>
+				</div>
+				<div>
+					<label for="deliveryAmount">Delivery Amount</label>
+					<div>
+						<form:input path="deliveryAmount" />
 					</div>
 				</div>
 				<div>

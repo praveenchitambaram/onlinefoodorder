@@ -17,7 +17,6 @@ public class FoodProduct {
 	@Column(name = "food_name")
 	@Size(max = 20, min = 3, message = "*Name length should be 3 to 20")
 	@NotBlank(message = "*Name can't be Empty")
-	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid name ")
 	private String foodName;
 	@Column(name = "price")
 	private float foodPrice;

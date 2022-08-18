@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +15,7 @@
 
 body {
 	background-image:
-		url("https://static.wixstatic.com/media/445159_f6fe803589f1425aaef7d6393e8ea9bd~mv2.jpg/v1/fill/w_640,h_402,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/445159_f6fe803589f1425aaef7d6393e8ea9bd~mv2.jpg");
+		url("https://www.questrmg.com/wp-content/uploads/2019/03/web-banner-Top-Three-Restaurant-Trends.jpg");
 	height: 768px;
 	width: 1366px;
 	background-position: center top;
@@ -44,7 +46,7 @@ ul li {
 
 ul li a {
 	text-decoration: none;
-	color: #fff;
+	color: #FFFFFF;
 	font-family: Arial;
 	font-weight: bold;
 	transition: 0.4s ease-in-out;
@@ -57,12 +59,11 @@ ul li a:hover {
 </head>
 <body>
 	<div class="menu">
-		<ul>
+		<ul>	
 			<li><a href="#">HOME</a></li>
-			<li><a href="/customer/customerpage">LOGIN</a></li>
-			<li><a href="/customer/customerloginpage">CUSTOMER</a></li>
-			<li><a href="#">CONTACT</a></li>
-			<li><a href="/companyadmin/adminlogin">ADMIN</a></li>
+			<li><a href="/customer/customerloginpage">LOGIN</a></li>
+			<li><a href="/customer/addcustomerform">CUSTOMER</a></li>
+			<li><a href="/admin/adminlogin">ADMIN</a></li>
 		</ul>
 	</div>
 </body>

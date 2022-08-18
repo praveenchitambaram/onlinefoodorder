@@ -30,6 +30,8 @@ public class Order {
 	private String paymentType;
 	@Column(name = "price")
 	private float price;
+	@Column(name = "deli_amount")
+	private float deliveryAmount;
 	@Column(name = "amount")
 	private float totalAmount;
 	@Column(name = "ord_date")
@@ -95,6 +97,14 @@ public class Order {
 
 	public void setPrice(float price) {
 		this.price = price;
+	}
+
+	public float getDeliveryAmount() {
+		return deliveryAmount;
+	}
+
+	public void setDeliveryAmount(float deliveryAmount) {
+		this.deliveryAmount = deliveryAmount;
 	}
 
 	public float getTotalAmount() {

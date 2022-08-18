@@ -77,7 +77,7 @@ public class CustomerService {
 		}
 		return customerOrderDetailsDTO;
 	}
-	public Customer getCustomerIdAndEmail(int id, String email) {
-		return customerrepository.findByCustomerIdAndEmail(id, email);
+	public Customer getEmailAndPassword( String email,String password) {
+		return customerrepository.findByEmailAndPassword(email, password);
 	}
 }

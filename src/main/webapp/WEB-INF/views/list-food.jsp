@@ -7,6 +7,7 @@
 <html>
 <head>
 <title>Item Management Application</title>
+
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
@@ -24,9 +25,12 @@
 
 
 		<div class="container">
-			<h3 class="text-center">Food Menu</h3>
+			<h3 class="text-center">List of Food Menu</h3>
 			<hr>
 			<div class="container text-left">
+
+				<a href="/foodproduct/addform" class="btn btn-success">AddNew
+					Items</a>
 				<button type="submit" class="btn btn-success"
 					onclick="history.back()">Go Back</button>
 			</div>
@@ -48,10 +52,15 @@
 							<td><c:out value="${foodproduct.foodId}" /></td>
 							<td><c:out value="${foodproduct.foodName}" /></td>
 							<td><c:out value="${foodproduct.foodPrice}" /></td>
-							<td><a href="/order/addform">Add Orders </a></td>
+							<td><a
+								href="/foodproduct/updateform?foodid=${foodproduct.foodId}">Edit</a>
+								&nbsp;&nbsp;&nbsp;&nbsp; <a
+								href="/foodproduct/deletefoodproduct?foodproductid=${foodproduct.foodId}">Delete</a></td>
 						</tr>
 					</c:forEach>
+					<!-- } -->
 				</tbody>
+
 			</table>
 		</div>
 	</div>

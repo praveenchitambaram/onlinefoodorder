@@ -46,7 +46,7 @@ public class CustomerController {
 			return "add-customer-form";
 		}
 		customerService.save(theCustomer);
-		return "redirect:/customer/customerlist";
+		return "redirect:/customer/findcustomerbyid?customerid="+theCustomer.getCustomerId();
 	}
 
 	@GetMapping("/updatecustomerform")
@@ -57,7 +57,7 @@ public class CustomerController {
 	}
 
 	@PostMapping("/updatecustomer")
-	public String UpdateCustomer(@Valid @ModelAttribute("updatecustomer") Customer theCustomer, Errors errors) {
+	public String updateCustomer(@Valid @ModelAttribute("updatecustomer") Customer theCustomer, Errors errors) {
 		if (errors.hasErrors()) {
 			return "update-customer-form";
 		}
@@ -68,7 +68,6 @@ public class CustomerController {
 
 	@GetMapping("/deletecustomer")
 	public String deleteCustomer(@RequestParam("customerid") int id) {
-		Customer theCustomer = customerService.findById(id);
 		customerService.deleteById(id);
 		return "redirect:/customer/customerlist";
 	}
@@ -95,21 +94,23 @@ public class CustomerController {
 		model.addAttribute("orderdetailslist", crdto.getOrderDetailsList());
 		return "list-customer-orderdetails";
 	}
-
-	@GetMapping("/customerpage")
-	public String CustomerLogin(Model model) {
-		Customer customer = new Customer();
-		model.addAttribute("login", customer);
-		return "customer-login-form";
+	@GetMapping("/customerloginpage")
+	public String customerLogin(Model model) {
+	    Customer  theCustomer=new Customer();
+	    model.addAttribute("cuslogin", theCustomer);
+	    return "customerloginpages";
 	}
-
 	@PostMapping("/customerlogin")
-	public String checkingAccess(@ModelAttribute("login") Customer cus) {
-		Customer customer = customerService.getCustomerIdAndEmail(cus.getCustomerId(), cus.getEmail());
-		if (customer != null) {
-			return "redirect:/foodproduct/list";
-		} else
-			return "invalid customer error";
+	public String checkingAccess(@ModelAttribute("cuslogin") Customer theCus) {
+	    Customer  customer=customerService.getEmailAndPassword(theCus.getEmail(),theCus.getPassword());
+	    if(customer!=null) {
+	    	return "redirect:/foodproduct/list";
+	    }else
+	        return "Invalid-user-error";
 	}
-
+	@GetMapping("/homepage")
+	public String home(Model model) {
+		return "home";
+	}
+	
 }

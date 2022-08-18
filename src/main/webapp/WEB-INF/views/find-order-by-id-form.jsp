@@ -49,6 +49,12 @@
 					</div>
 				</div>
 				<div>
+					<label for="deliveryAmount">Delivery Amount</label>
+					<div>
+						<form:input path="deliveryAmount" />
+					</div>
+				</div>
+				<div>
 					<label for="totalAmount">Total Amount</label>
 					<div>
 						<form:input path="totalAmount" readonly="true"/>

@@ -14,20 +14,20 @@
 		<table>
 			<thead>
 				<tr>
-					<th>Customer Id</th>
-					<th>Name</th>
-					<th>Contact Number</th>
+					<th>User Id</th>
+					<th>User Name</th>
 					<th>Email</th>
-					
+					<th>UserPassword</th>
+
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="customer" items="${allcustomers}">
+				<c:forEach var="admin" items="${alladmins}">
 					<tr>
-						<td>${customer.customerId}</td>
-						<td>${customer.customerName}</td>
-						<td>${customer.contactNumber}</td>
-						<td>${customer.email}</td>
+						<td>${admin.userId}</td>
+						<td>${admin.userName}</td>
+						<td>${admin.email}</td>
+						<td>${admin.userPassword}</td>
 					</tr>
 				</c:forEach>
 			</tbody>
