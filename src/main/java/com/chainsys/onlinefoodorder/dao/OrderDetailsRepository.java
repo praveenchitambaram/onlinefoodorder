@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.chainsys.onlinefoodorder.model.Order;
 import com.chainsys.onlinefoodorder.model.OrderDetail;
 
 @Repository

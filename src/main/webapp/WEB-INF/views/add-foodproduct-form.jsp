@@ -133,6 +133,10 @@ table {
 					modelAttribute="addfoodproduct">
 					<div>
 						<table>
+							<caption></caption>
+							<tr>
+								<th></th>
+							</tr>
 							<tbody>
 								<tr>
 									<td><label for="foodId">Food Id</label></td>
@@ -140,7 +144,7 @@ table {
 											placaholder="foodId" title="Id must be required"
 											required="true" /></td>
 								</tr>
-								<form:errors path="foodName" Class="text-danger"></form:errors>
+								<form:errors path="foodId" Class="text-danger"></form:errors>
 								<tr>
 									<td><label for="foodName">Food Name</label></td>
 									<td><form:input path="foodName" class="text-box"

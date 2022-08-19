@@ -56,7 +56,7 @@ public class OrderDetailsController {
 	}
 
 	@PostMapping("/updateorderdetail")
-	public String UpdateOrder(@Valid @ModelAttribute("updateorderdetails") OrderDetail theOrderDetails, Errors errors) {
+	public String updateOrder(@Valid @ModelAttribute("updateorderdetails") OrderDetail theOrderDetails, Errors errors) {
 		if (errors.hasErrors()) {
 			return "update-orderdetails-form";
 		}
@@ -67,7 +67,6 @@ public class OrderDetailsController {
 
 	@GetMapping("/deleteorder")
 	public String deleteorderdetails(@RequestParam("orderid") int id) {
-		OrderDetail theOrderDetails = orderDetailsService.findByid(id);
 		orderDetailsService.deleteById(id);
 		return "redirect:/orderdetails/list";
 	}

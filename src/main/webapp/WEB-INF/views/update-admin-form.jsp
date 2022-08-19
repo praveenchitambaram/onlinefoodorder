@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div id="root">
-		<div id="form" align="center">
+		<div id="form" text-align="center">
 			<form:form action="updateadmins" method="post"
 				modelAttribute="updateadminform">
 				<div>

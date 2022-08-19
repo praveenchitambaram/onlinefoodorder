@@ -16,8 +16,7 @@ public class OrderService {
 	private OrderRepository orderRepository;
 
 	public List<Order> getOrder() {
-		List<Order> listOrder = orderRepository.findAll();
-		return listOrder;
+		return orderRepository.findAll();
 	}
 
 	public Order save(Order order) {

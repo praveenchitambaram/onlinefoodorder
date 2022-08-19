@@ -26,35 +26,35 @@ body {
 </style>
 </head>
 <body>
-		<div id="form" align="center">
-			<form:form action="add" method="post" modelAttribute="addadmin">
+	<div id="form" text-align="center">
+		<form:form action="add" method="post" modelAttribute="addadmin">
+			<div>
+				<label for="userName">Name</label>
 				<div>
-					<label for="userName">Name</label>
-					<div>
-						<form:input path="userName" title="Pls Enter Your Name"
-							required="true" />
-					</div>
+					<form:input path="userName" title="Pls Enter Your Name"
+						required="true" />
 				</div>
+			</div>
+			<div>
+				<label for="email">Email</label>
 				<div>
-					<label for="email">Email</label>
-					<div>
-						<form:input path="email" title="Pls Enter Your Email"
-							required="true" />
-					</div>
+					<form:input path="email" title="Pls Enter Your Email"
+						required="true" />
 				</div>
-				<form:errors path="email" cssClass="text-danger" />
+			</div>
+			<form:errors path="email" cssClass="text-danger" />
+			<div>
+				<label for="userPassword">UserPassword</label>
 				<div>
-					<label for="userPassword">UserPassword</label>
-					<div>
-						<form:input path="userPassword" title="Pls Enter Your Password"
-							required="true" />
-					</div>
+					<form:input path="userPassword" title="Pls Enter Your Password"
+						required="true" />
 				</div>
-				<form:errors path="userPassword" cssClass="text-danger" />
-				<div>
-					<form:button>Creat Account</form:button>
-				</div>
-			</form:form>
-		</div>
+			</div>
+			<form:errors path="userPassword" cssClass="text-danger" />
+			<div>
+				<form:button>Creat Account</form:button>
+			</div>
+		</form:form>
+	</div>
 </body>
 </html>

@@ -4,7 +4,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html lang="en">
 <head>
 <title>Item Management Application</title>
 <link rel="stylesheet"
@@ -32,6 +32,10 @@
 			</div>
 			<br>
 			<table class="table table-bordered">
+				<caption></caption>
+				<tr>
+					<th></th>
+				</tr>
 				<thead>
 					<tr>
 						<th>ID</th>
@@ -48,7 +52,7 @@
 							<td><c:out value="${foodproduct.foodId}" /></td>
 							<td><c:out value="${foodproduct.foodName}" /></td>
 							<td><c:out value="${foodproduct.foodPrice}" /></td>
-							<td><a href="/order/addform">Add Orders </a></td>
+							<td><a href='/order/addform?foodId=${foodproduct.foodId}'>Add Orders </a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

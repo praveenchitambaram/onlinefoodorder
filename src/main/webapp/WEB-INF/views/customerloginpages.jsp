@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Food Shop</title>
@@ -51,18 +51,21 @@ body {
 					<div class="card-body">
 						<form action="customerlogin" method="post">
 							<fieldset class="form-group">
-								<label><i class="fa fa-user"></i>&nbsp&nbspEmail :</label> <input
+							<legend></legend>
+								<label><em class="fa fa-user"></em>&nbsp&nbspEmail :</label> <input
 									type="text" class="form-control" name="email"
 									placeholder="Enter your User Name" value="" required="required">
 							</fieldset>
 
 							<fieldset class="form-group">
-								<label><i class="fas fa-unlock-alt"></i>&nbsp&nbspPassword
+							<legend></legend>
+								<label><em class="fas fa-unlock-alt"></em>&nbsp&nbspPassword
 									:</label> <input type="password" class="form-control" name="password"
 									placeholder="Enter the passowrd" value="" required="required">
 							</fieldset>
 							<button type="submit" class="btn btn-success">Sign In</button>
 							<fieldset class="form-group">
+							<legend></legend>
 								<label>Create an account :</label> <a
 									href="/customer/addcustomerform"><input type="button"
 									class="btn btn-success" value="Sign Up"></a>

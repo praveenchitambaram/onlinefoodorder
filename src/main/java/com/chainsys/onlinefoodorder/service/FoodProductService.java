@@ -16,8 +16,7 @@ public class FoodProductService {
 	private FoodProductRepository foodProductRepository;
 
 	public List<FoodProduct> getFoodProduct() {
-		List<FoodProduct> listFoodProduct = foodProductRepository.findAll();
-		return listFoodProduct;
+		return foodProductRepository.findAll();
 	}
 
 	public FoodProduct save(FoodProduct foodProduct) {

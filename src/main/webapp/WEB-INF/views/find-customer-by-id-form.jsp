@@ -132,6 +132,10 @@ table {
 				modelAttribute="findcustomerbyid">
 				<div>
 					<table>
+						<caption></caption>
+						<tr>
+							<th></th>
+						</tr>
 						<tbody>
 							<tr>
 								<td><label for="customerId">Customer Id</label></td>

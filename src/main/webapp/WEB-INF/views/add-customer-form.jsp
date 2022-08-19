@@ -4,7 +4,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Registration</title>
@@ -30,26 +30,30 @@
 			<div class="card-body">
 				<form action="add" method="post">
 					<fieldset class="form-group">
-						<label><i class="fas fa-file-signature"></i>&nbsp&nbsp
+						<legend></legend>
+						<label><em class="fas fa-file-signature"></em>&nbsp&nbsp
 							Name :</label> <input type="text" class="form-control"
 							name="customerName" placeholder="Enter the Name"
 							required="required">
 					</fieldset>
 
 					<fieldset class="form-group">
-						<label><i class="fas fa-file-signature"></i>&nbsp&nbspContact
+						<legend></legend>
+						<label><em class="fas fa-file-signature"></em>&nbsp&nbspContact
 							Number :</label> <input type="text" class="form-control"
 							name="contactNumber" placeholder="Enter the Contact Number"
 							required="required">
 					</fieldset>
 
 					<fieldset class="form-group">
-						<label><i class="fa fa-envelope"></i>&nbsp&nbspEmail :</label> <input
+						<legend></legend>
+						<label><em class="fa fa-envelope"></em>&nbsp&nbspEmail :</label> <input
 							type="text" name="email" class="form-control"
 							placeholder="Enter your Email" required="required">
 					</fieldset>
 					<fieldset class="form-group">
-						<label><i class="fas fa-unlock-alt"></i>&nbsp&nbspPassword
+						<legend></legend>
+						<label><em class="fas fa-unlock-alt"></em>&nbsp&nbspPassword
 							:</label> <input type="password" class="form-control" name="password"
 							placeholder="Enter the Password" required="required">
 					</fieldset>
@@ -57,6 +61,7 @@
 					<button type="submit" class="btn btn-success">Sign up</button>
 
 					<fieldset class="form-group">
+						<legend></legend>
 						<label>Already have account :</label> <a
 							href="/customer/customerloginpage"><input type="button"
 							class="btn btn-success" value="Sign In"></a>

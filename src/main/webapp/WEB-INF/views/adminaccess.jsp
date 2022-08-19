@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <title>Item Management Application</title>
 <link rel="stylesheet"
@@ -12,8 +12,7 @@
 		<nav class="navbar navbar-expand-md navbar-dark"
 			style="background-color: tomato">
 			<div>
-				<a href="#" class="navbar-brand">
-					Item Management App </a>
+				<a href="#" class="navbar-brand"> Item Management App </a>
 			</div>
 
 			<ul class="navbar-nav">
@@ -34,10 +33,15 @@
 
 				<a href="/foodproduct/addform" class="btn btn-success">Add New
 					Items</a>
-				<button type="submit" class="btn btn-success"onclick="history.back()">Go Back</button>
+				<button type="submit" class="btn btn-success"
+					onclick="history.back()">Go Back</button>
 			</div>
 			<br>
 			<table class="table table-bordered">
+				<caption></caption>
+				<tr>
+					<th></th>
+				</tr>
 				<thead>
 					<tr>
 						<th>ID</th>

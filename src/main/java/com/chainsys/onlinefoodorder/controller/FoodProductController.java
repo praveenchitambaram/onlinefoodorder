@@ -56,7 +56,7 @@ public class FoodProductController {
 	}
 
 	@PostMapping("/updatefood")
-	public String UpdateFoodProduct(@Valid@ModelAttribute("updatefoodproduct") FoodProduct theFoodProduct,
+	public String updateFoodProduct(@Valid@ModelAttribute("updatefoodproduct") FoodProduct theFoodProduct,
 			Errors errors) {
 		if (errors.hasErrors()) {
 			return "update-foodproduct-form";
@@ -68,7 +68,6 @@ public class FoodProductController {
 
 	@GetMapping("/deletefoodproduct")
 	public String deletefoodproduct(@RequestParam("foodproductid") int id) {
-		FoodProduct theFoodProduct = foodProductService.findByid(id);
 		foodProductService.deleteById(id);
 		return "redirect:/foodproduct/foodlist";
 	}

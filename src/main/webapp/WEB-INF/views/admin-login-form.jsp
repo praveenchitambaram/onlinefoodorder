@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE >
-<html>
+<html lang="en">
 <meta charset="ISO-8859-1">
 <title>Admin login page</title>
 <link rel="stylesheet"
@@ -39,13 +39,15 @@
 			<div class="card-body">
 				<form action="userlogin" method="post">
 					<fieldset class="form-group">
-						<label><i class="fa fa-user"></i>&nbsp&nbspUser Id :</label> <input
+					<legend></legend>
+						<label><em class="fa fa-user"></em>&nbsp&nbspUser Id :</label> <input
 							type="text" class="form-control" name="userId"
 							placeholder="Enter your User UserId" value="" required="required">
 					</fieldset>
 
 					<fieldset class="form-group">
-						<label><i class="fas fa-unlock-alt"></i>&nbsp&nbspPassword
+					<legend></legend>
+						<label><em class="fas fa-unlock-alt"></em>&nbsp&nbspPassword
 							:</label> <input type="password" class="form-control" name="userPassword"
 							placeholder="Enter the passowrd" value="" required="required">
 					</fieldset>

@@ -131,6 +131,10 @@ table {
 			<form:form action="updatefood" method="post" modelAttribute="updatefoodproduct">
 				<div>
 					<table>
+					<caption></caption>
+					<tr>
+					<th></th>
+					</tr>
 						<tbody>
 							<tr>
 								<td><label for="foodId">Food Id</label></td>

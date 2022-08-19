@@ -5,7 +5,7 @@ import java.util.List;
 
 public class CustomerOrderDetailsDTO {
 	private Customer customer;
-	private List<OrderDetail> orderDetailsList = new ArrayList<OrderDetail>();
+	private List<OrderDetail> orderDetailsList = new ArrayList<>();
 	public Customer getCustomer() {
 		return customer;
 	}

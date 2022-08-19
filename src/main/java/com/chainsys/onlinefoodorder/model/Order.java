@@ -5,9 +5,12 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
@@ -16,6 +19,8 @@ import javax.validation.constraints.Pattern;
 @Table(name = "orders")
 public class Order {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "order_id")
+	@SequenceGenerator(name = "order_id", sequenceName = "order_id", allocationSize = 1)
 	@Column(name = "order_id")
 	private int orderId;
 	@Column(name = "cust_id")
@@ -36,8 +41,6 @@ public class Order {
 	private float totalAmount;
 	@Column(name = "ord_date")
 	private Date orderDate;
-	@Column(name = "ord_time")
-	private String orderTime;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "cust_id", nullable = false, insertable = false, updatable = false)
@@ -121,14 +124,6 @@ public class Order {
 
 	public void setOrderDate(Date orderDate) {
 		this.orderDate = orderDate;
-	}
-
-	public String getOrderTime() {
-		return orderTime;
-	}
-
-	public void setOrderTime(String orderTime) {
-		this.orderTime = orderTime;
 	}
 
 }

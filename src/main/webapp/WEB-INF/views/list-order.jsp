@@ -2,7 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <title>Item Management Application</title>
 <link rel="stylesheet"
@@ -24,10 +24,14 @@
 			<h3 class="text-center">List of Order</h3>
 			<hr>
 			<button type="submit" class="btn btn-success"
-					onclick="history.back()">Go Back</button>
+				onclick="history.back()">Go Back</button>
 			<div class="container text-left"></div>
 			<br>
 			<table class="table table-bordered">
+				<caption></caption>
+				<tr>
+					<th></th>
+				</tr>
 				<thead>
 					<tr>
 

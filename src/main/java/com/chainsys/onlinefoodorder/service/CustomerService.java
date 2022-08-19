@@ -29,8 +29,7 @@ public class CustomerService {
 	private OrderDetailsRepository orderdetailsrepository;
 
 	public List<Customer> getCustomers() {
-		List<Customer> listCustomer = customerrepository.findAll();
-		return listCustomer;
+		return customerrepository.findAll();
 	}
 
 	public Customer save(Customer customer) {
@@ -39,7 +38,7 @@ public class CustomerService {
 	}
 
 	public Customer findById(int id) {
-		return customerrepository.findById(id);
+		return customerrepository.findByCustomerId(id);
 	}
 
 	@Transactional
@@ -58,7 +57,7 @@ public class CustomerService {
 		List<Order> order = orderrepository.findByCustomerId(id);
 		Iterator<Order> itr = order.iterator();
 		while (itr.hasNext()) {
-			crdto.addOrder((Order) itr.next());
+			crdto.addOrder(itr.next());
 		}
 		return crdto;
 
@@ -73,11 +72,20 @@ public class CustomerService {
 		List<OrderDetail> orderDetailList = orderdetailsrepository.findByCustomerId(id);
 		Iterator<OrderDetail> itr = orderDetailList.iterator();
 		while (itr.hasNext()) {
-			customerOrderDetailsDTO.addOrderDetails((OrderDetail) itr.next());
+			customerOrderDetailsDTO.addOrderDetails(itr.next());
 		}
 		return customerOrderDetailsDTO;
 	}
 	public Customer getEmailAndPassword( String email,String password) {
 		return customerrepository.findByEmailAndPassword(email, password);
 	}
+	public Customer findByCustomerId(long id) {
+		Customer customer = customerrepository.findByCustomerId(id);
+        if (customer==null) {
+            System.out.println("debug:product is null");
+            return null;
+        }
+        return customer;
+        
+    }
 }

@@ -2,6 +2,7 @@ package com.chainsys.onlinefoodorder.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -101,9 +102,11 @@ public class CustomerController {
 	    return "customerloginpages";
 	}
 	@PostMapping("/customerlogin")
-	public String checkingAccess(@ModelAttribute("cuslogin") Customer theCus) {
+	public String checkingAccess(@ModelAttribute("cuslogin") Customer theCus,HttpSession session) {
 	    Customer  customer=customerService.getEmailAndPassword(theCus.getEmail(),theCus.getPassword());
+	 
 	    if(customer!=null) {
+	    	   session.setAttribute("custId", customer.getCustomerId());
 	    	return "redirect:/foodproduct/list";
 	    }else
 	        return "Invalid-user-error";
