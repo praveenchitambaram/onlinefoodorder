@@ -1,4 +1,4 @@
-package com.chainsys.onlinefoodorder.dao;
+package com.chainsys.onlinefoodorder.repository;
 
 import java.util.List;
 
@@ -17,6 +17,6 @@ public interface UserAdminRepository extends CrudRepository<UserAdmin, Integer> 
 
 	List<UserAdmin> findAll();
 
-	UserAdmin findByUserIdAndUserPassword(int id, String str); // login user
+	UserAdmin findByEmailAndUserPassword(String email, String str); // login user
 
 }

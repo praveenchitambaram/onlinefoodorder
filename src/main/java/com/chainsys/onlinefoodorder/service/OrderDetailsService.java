@@ -7,8 +7,8 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.chainsys.onlinefoodorder.dao.OrderDetailsRepository;
 import com.chainsys.onlinefoodorder.model.OrderDetail;
+import com.chainsys.onlinefoodorder.repository.OrderDetailsRepository;
 
 @Service
 public class OrderDetailsService {

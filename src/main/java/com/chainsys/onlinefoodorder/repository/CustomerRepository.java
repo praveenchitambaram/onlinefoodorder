@@ -1,4 +1,4 @@
-package com.chainsys.onlinefoodorder.dao;
+package com.chainsys.onlinefoodorder.repository;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import com.chainsys.onlinefoodorder.model.Customer;
 
 @Repository
 public interface CustomerRepository extends CrudRepository<Customer, Integer> {
-	Customer findByCustomerId(long id);
+	Customer findByCustomerId(int id);
 
 	Customer save(Customer coustomer);
 

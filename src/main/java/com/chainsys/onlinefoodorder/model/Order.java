@@ -12,33 +12,29 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "orders")
 public class Order {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO, generator = "order_id")
-	@SequenceGenerator(name = "order_id", sequenceName = "order_id", allocationSize = 1)
-	@Column(name = "order_id")
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "ORDER_ID")
+	@SequenceGenerator(name = "ORDER_ID", sequenceName = "ORDER_ID", allocationSize = 1)
+	@Column(name = "ORDER_ID")
 	private int orderId;
-	@Column(name = "cust_id")
+	@Column(name = "CUST_ID")
 	private int customerId;
-	@Column(name = "food_id")
-	private int foodId;
-	@Column(name = "quantity")
+	@Column(name = "FOOD_NAME")
+	private String foodName;
+	@Column(name = "QUANTITY")
 	private int foodQuantity;
-	@Column(name = "payment_type")
-	@NotBlank(message = "*Name can't be Empty")
-	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid name ")
+	@Column(name = "PAYMENT_TYPE")
 	private String paymentType;
-	@Column(name = "price")
+	@Column(name = "PRICE")
 	private float price;
-	@Column(name = "deli_amount")
-	private float deliveryAmount;
-	@Column(name = "amount")
+	@Column(name = "TOTAL_AMOUNT")
 	private float totalAmount;
+	@Column(name = "address")
+	private String address;
 	@Column(name = "ord_date")
 	private Date orderDate;
 
@@ -70,12 +66,12 @@ public class Order {
 		this.customerId = customerId;
 	}
 
-	public int getFoodId() {
-		return foodId;
+	public String getFoodName() {
+		return foodName;
 	}
 
-	public void setFoodId(int foodId) {
-		this.foodId = foodId;
+	public void setFoodName(String foodName) {
+		this.foodName = foodName;
 	}
 
 	public int getFoodQuantity() {
@@ -102,20 +98,20 @@ public class Order {
 		this.price = price;
 	}
 
-	public float getDeliveryAmount() {
-		return deliveryAmount;
-	}
-
-	public void setDeliveryAmount(float deliveryAmount) {
-		this.deliveryAmount = deliveryAmount;
-	}
-
 	public float getTotalAmount() {
 		return totalAmount;
 	}
 
 	public void setTotalAmount(float totalAmount) {
 		this.totalAmount = totalAmount;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	public Date getOrderDate() {

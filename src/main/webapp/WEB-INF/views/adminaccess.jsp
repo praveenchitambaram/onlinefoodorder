@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Item Management Application</title>
+<title>Food Management Application</title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
@@ -12,13 +12,14 @@
 		<nav class="navbar navbar-expand-md navbar-dark"
 			style="background-color: tomato">
 			<div>
-				<a href="#" class="navbar-brand"> Item Management App </a>
+				<a href="#" class="navbar-brand"> Food Management App </a>
 			</div>
 
 			<ul class="navbar-nav">
-				<li><a href="/foodproduct/foodlist" class="nav-link">Items</a></li>
-				<li><a href="/order/list" class="nav-link">Order Details</a></li>
+				<li><a href="/foodproduct/foodlist" class="nav-link">Food
+						List</a></li>
 			</ul>
+
 		</nav>
 	</header>
 	<br>
@@ -40,14 +41,14 @@
 			<table class="table table-bordered">
 				<caption></caption>
 				<tr>
-					<th></th>
+					<th scope="row"></th>
 				</tr>
 				<thead>
 					<tr>
-						<th>ID</th>
-						<th>Food Name</th>
-						<th>Price</th>
-						<th>Actions</th>
+						<th scope="row">ID</th>
+						<th scope="row">Food Name</th>
+						<th scope="row">Price</th>
+						<th scope="row">Actions</th>
 					</tr>
 				</thead>
 				<tbody>

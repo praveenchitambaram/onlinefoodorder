@@ -1,4 +1,4 @@
-package com.chainsys.onlinefoodorder.dao;
+package com.chainsys.onlinefoodorder.repository;
 
 import java.util.List;
 

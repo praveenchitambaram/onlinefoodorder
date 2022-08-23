@@ -2,7 +2,6 @@ package com.chainsys.onlinefoodorder.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,7 +46,7 @@ public class CustomerController {
 			return "add-customer-form";
 		}
 		customerService.save(theCustomer);
-		return "redirect:/customer/findcustomerbyid?customerid="+theCustomer.getCustomerId();
+		return "redirect:/customer/findcustomerbyid?customerid=" + theCustomer.getCustomerId();
 	}
 
 	@GetMapping("/updatecustomerform")
@@ -95,25 +94,29 @@ public class CustomerController {
 		model.addAttribute("orderdetailslist", crdto.getOrderDetailsList());
 		return "list-customer-orderdetails";
 	}
+
 	@GetMapping("/customerloginpage")
 	public String customerLogin(Model model) {
-	    Customer  theCustomer=new Customer();
-	    model.addAttribute("cuslogin", theCustomer);
-	    return "customerloginpages";
+		Customer theCustomer = new Customer();
+		model.addAttribute("cuslogin", theCustomer);
+		return "customerloginpages";
 	}
+
 	@PostMapping("/customerlogin")
-	public String checkingAccess(@ModelAttribute("cuslogin") Customer theCus,HttpSession session) {
-	    Customer  customer=customerService.getEmailAndPassword(theCus.getEmail(),theCus.getPassword());
-	 
-	    if(customer!=null) {
-	    	   session.setAttribute("custId", customer.getCustomerId());
-	    	return "redirect:/foodproduct/list";
-	    }else
-	        return "Invalid-user-error";
+	public String checkingAccess(@ModelAttribute("cuslogin") Customer theCus, Model model) {
+		Customer customer = customerService.getEmailAndPassword(theCus.getEmail(), theCus.getPassword());
+
+		if (customer != null) {
+			return "redirect:/foodproduct/list";
+		} else {
+			model.addAttribute("result", "Please enter the ValidEmail or password");
+		}
+		return "customerloginpages";
 	}
+
 	@GetMapping("/homepage")
 	public String home(Model model) {
 		return "home";
 	}
-	
+
 }

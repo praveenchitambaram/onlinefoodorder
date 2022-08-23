@@ -14,14 +14,14 @@
 		<table>
 			<caption></caption>
 			<tr>
-				<th></th>
+				<th scope="row"></th>
 			</tr>
 			<thead>
 				<tr>
-					<th>User Id</th>
-					<th>User Name</th>
-					<th>Email</th>
-					<th>UserPassword</th>
+					<th scope="row">User Id</th>
+					<th scope="row">User Name</th>
+					<th scope="row">Email</th>
+					<th scope="row">UserPassword</th>
 
 				</tr>
 			</thead>

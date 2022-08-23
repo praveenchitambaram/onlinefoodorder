@@ -21,11 +21,13 @@ body {
 .container.col-md-20 {
 	margin-left: 504px;
 }
+.error{
+color:red 
+}
 </style>
-<link rel="stylesheet" href="w3.css" type="text/css">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
@@ -51,21 +53,22 @@ body {
 					<div class="card-body">
 						<form action="customerlogin" method="post">
 							<fieldset class="form-group">
-							<legend></legend>
-								<label><em class="fa fa-user"></em>&nbsp&nbspEmail :</label> <input
+								<legend></legend>
+								<label><em class="fa fa-envelope"></em>Email :</label> <input
 									type="text" class="form-control" name="email"
 									placeholder="Enter your User Name" value="" required="required">
 							</fieldset>
 
 							<fieldset class="form-group">
-							<legend></legend>
-								<label><em class="fas fa-unlock-alt"></em>&nbsp&nbspPassword
-									:</label> <input type="password" class="form-control" name="password"
-									placeholder="Enter the passowrd" value="" required="required">
+								<legend></legend>
+								<label><em class="fas fa-unlock-alt"></em>Password :</label> <input
+									type="password" class="form-control" name="password"
+									placeholder="Enter the password" value="" required="required">
 							</fieldset>
 							<button type="submit" class="btn btn-success">Sign In</button>
+							<div class="error">${result}</div>
 							<fieldset class="form-group">
-							<legend></legend>
+								<legend></legend>
 								<label>Create an account :</label> <a
 									href="/customer/addcustomerform"><input type="button"
 									class="btn btn-success" value="Sign Up"></a>

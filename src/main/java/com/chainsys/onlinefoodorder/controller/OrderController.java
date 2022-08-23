@@ -2,8 +2,6 @@ package com.chainsys.onlinefoodorder.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,23 +13,19 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
+import com.chainsys.onlinefoodorder.service.FoodProductService;
 import com.chainsys.onlinefoodorder.model.FoodProduct;
 import com.chainsys.onlinefoodorder.model.Order;
-import com.chainsys.onlinefoodorder.service.CustomerService;
-import com.chainsys.onlinefoodorder.service.FoodProductService;
 import com.chainsys.onlinefoodorder.service.OrderService;
 
 @Controller
 @RequestMapping("/order")
-
 public class OrderController {
 	@Autowired
 	OrderService orderService;
 	@Autowired
-	CustomerService customerservice;
-	@Autowired
-	private FoodProductService foodService;
+	private FoodProductService foodProductService;
+
 	@GetMapping("/list")
 	public String getOrder(Model model) {
 		List<Order> allOrder = orderService.getOrder();
@@ -40,23 +34,22 @@ public class OrderController {
 	}
 
 	@GetMapping("/addform")
-	public String showAddForm(@RequestParam("foodId") int foodId, Model model,HttpServletRequest request) {
+	public String showAddForm(@RequestParam("foodId") int foodId, Model model) {
 		Order theOrder = new Order();
-		HttpSession session=request.getSession();
-		int cusId=(int)session.getAttribute("custId"); 
-		theOrder.setCustomerId(cusId);
-		theOrder.setFoodId(foodId);
-		FoodProduct foodProduct= foodService.findByid(foodId);
-		theOrder.setPrice((int) foodProduct.getFoodPrice());
+		FoodProduct foodProduct = foodProductService.findByid(foodId);
+		theOrder.setFoodName(foodProduct.getFoodName());
+		theOrder.setPrice(foodProduct.getFoodPrice());
 		model.addAttribute("addorder", theOrder);
 		return "add-order-form";
 	}
 
 	@PostMapping("/add")
-	public String addNewOrder(@ModelAttribute("addorder") Order theOrder, HttpSession session) {
+	public String addNewOrder(@ModelAttribute("addorder") Order theOrder, Errors errors) {
+		if (errors.hasErrors()) {
+			return "add-order-form";
+		}
 		orderService.save(theOrder);
-		session.setAttribute("orderId", theOrder.getOrderId());
-		return "redirect:/order/list";
+		return "redirect:/order/findorderbyid?orderId="+theOrder.getOrderId();
 	}
 
 	@GetMapping("/updateform")

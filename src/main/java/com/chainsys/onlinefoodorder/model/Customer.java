@@ -20,8 +20,9 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "Customer")
 public class Customer {
-	
-	@Id@GeneratedValue(strategy = GenerationType.AUTO, generator = "customer_id")
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "customer_id")
 	@SequenceGenerator(name = "customer_id", sequenceName = "customer_id", allocationSize = 1)
 	@Column(name = "cust_id")
 	private int customerId;
@@ -34,7 +35,7 @@ public class Customer {
 	@Digits(message = "Invalid Mobile Number", integer = 10, fraction = 0)
 	private long contactNumber;
 	@Column(name = "email")
-	@Email(message = "Invalid Email", regexp = "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}")
+	@Email(message = "*Invalid Email", regexp = "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}")
 	private String email;
 	@Column(name = "password")
 	private String password;

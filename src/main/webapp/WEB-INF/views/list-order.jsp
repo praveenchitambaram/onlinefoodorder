@@ -30,22 +30,20 @@
 			<table class="table table-bordered">
 				<caption></caption>
 				<tr>
-					<th></th>
 				</tr>
 				<thead>
 					<tr>
 
-						<th>Order Id</th>
-						<th>Customer Id</th>
-						<th>Food Id</th>
-						<th>food Quantity</th>
-						<th>Payment Type</th>
-						<th>Food Price</th>
-						<th>Delivery Amount</th>
-						<th>Total Amount</th>
-						<th>Order Date</th>
-						<th>Order Time</th>
-						<th>Cancel Order</th>
+						<th scope="row">Order Id</th>
+						<th scope="row">Customer Id</th>
+						<th scope="row">Food Name</th>
+						<th scope="row">food Quantity</th>
+						<th scope="row">Payment Type</th>
+						<th scope="row">Food Price</th>
+						<th scope="row">Total Amount</th>
+						<th scope="row">Order Date</th>
+						<th scope="row">Address</th>
+						<th scope="row">Cancel Order</th>
 
 					</tr>
 				</thead>
@@ -54,14 +52,13 @@
 						<tr>
 							<td>${order.orderId}</td>
 							<td>${order.customerId}</td>
-							<td>${order.foodId}</td>
+							<td>${order.foodName}</td>
 							<td>${order.foodQuantity}</td>
 							<td>${order.paymentType}</td>
 							<td>${order.price}</td>
-							<td>${order.deliveryAmount}</td>
 							<td>${order.totalAmount}</td>
+							<td>${order.address}</td>
 							<td>${order.orderDate}</td>
-							<td>${order.orderTime}</td>
 							<td><a href="/order/deleteorder?orderId=${order.orderId}">Cancel
 									Orders</a></td>
 						</tr>

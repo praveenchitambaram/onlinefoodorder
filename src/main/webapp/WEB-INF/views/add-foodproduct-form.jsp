@@ -6,169 +6,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<style type="text/css">
-h1 {
-	color: rgb(210, 210, 210);
-	float: center;
-	text-align: center;
-}
-
-tr {
-	color: red;
-}
-
-label {
-	color: white;
-	font-size: 1.3em;
-	/* display: flex; */
-	margin: 17px;
-	font-weight: bold;
-	/* cursor: pointer; */
-	/* transition: .5s ease-in-out; */
-	/* text-align: center; */
-	margin-bottom: 6px;
-}
-
-#btn {
-	width: 150px;
-	height: 30px;
-	border: black;
-	border-radius: 3px;
-	padding-left: 8px;
-	color: white;
-	background-color: maroon;
-	display: inline-block;
-	float: right;
-}
-
-#log {
-	width: 150px;
-	height: 30px;
-	border: black;
-	border-radius: 75px;
-	padding-left: 8px;
-	color: white;
-	background-color: maroon;
-	display: inline-block;
-	margin: 4px 2px;
-	cursor: pointer;
-	-webkit-transition-duration: 0.4s;
-	transition-duration: 0.4s;
-	margin-left: 105px;
-	float: center;
-}
-
-.box {
-	overflow: hidden;
-	border-radius: 10px;
-	box-shadow: 5px 20px 50px #000;
-	margin: auto;
-	padding: 10px;
-	text-align: center;
-	float: center;
-	font-weight: 600;
-	width: 600px;
-}
-
-#centreName {
-	width: 250px;
-	height: 30px;
-	border: none;
-	border-radius: 3px;
-	padding-left: 8px;
-}
-
-#pinCode {
-	width: 260px;
-	height: 30px;
-	border: none;
-	border-radius: 3px;
-	padding-left: 8px;
-}
-
-#contactPersonName {
-	width: 250px;
-	height: 30px;
-	border: none;
-	border-radius: 3px;
-	padding-left: 8px;
-}
-
-#contactPersonPhoneNo {
-	width: 250px;
-	height: 30px;
-	border: none;
-	border-radius: 3px;
-	padding-left: 8px;
-}
-
-#log {
-	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
-		rgba(0, 0, 0, 0.19);
-}
-
-body {
-	background-image:
-		url("https://png.pngtree.com/background/20210709/original/pngtree-food-food-snack-eating-goods-picture-image_925656.jpg");
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: 100% 100%;
-	background-color: #080710;
-}
-
-table {
-	text-align: center;
-	margin-left: 125px;
-}
-</style>
-<meta charset="ISO-8859-1">
-<title>Add Centre</title>
+<title>Post Order</title>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
-	<div id="root">
-		<h1>Add New Food</h1>
-		<div id="root">
-			<div id="form" class="box">
+
+	<style>
+body, div, ul, li, p {
+	font-family: arial;
+}
+
+#header {
+	height: 120px;
+	display: block;
+	background-color: #F5F5F5;
+}
+
+#header .logo {
+	background-color: tomato;
+}
+
+#header .logo a {
+	padding-left: 450px;
+	color: black;
+	text-decoration: none;
+	font-size: 40px;
+}
+/** Navigation **/
+#navigation {
+	display: inline-block;
+	list-style: none;
+	line-height: 50px;
+	margin: 0;
+	padding-left: 20;
+}
+
+#navigation ul {
+	display: inline-block;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#navigation li {
+	float: left;
+	width: 180px;
+	text-align: right;
+}
+
+#navigation li a {
+	color: #616161;
+	font-size: 20px;
+	text-decoration: none;
+}
+
+#navigation li a:hover {
+	font-size: 20px;
+	color: #212121;
+}
+
+#navigation li.active a {
+	transition: 900ms;
+	color: #fff;
+	padding: 12px;
+	background-color: transparent;
+	font-size: 20px;
+	border: 2px solid white;
+	border-radius: 10px;
+}
+</style>
+	<div id="header">
+		<div>
+			<div class="logo">
+				<a href="/customer/homepage">Food Shop</a>
+			</div>
+		</div>
+	</div>
+	<div class="container col-md-100">
+		<h4>Add New Food:</h4>
+		<div class="card">
+
+			<div class="card-body">
 				<form:form action="add" method="post"
 					modelAttribute="addfoodproduct">
-					<div>
-						<table>
-							<caption></caption>
-							<tr>
-								<th></th>
-							</tr>
-							<tbody>
-								<tr>
-									<td><label for="foodId">Food Id</label></td>
-									<td><form:input path="foodId" class="text-box"
-											placaholder="foodId" title="Id must be required"
-											required="true" /></td>
-								</tr>
-								<form:errors path="foodId" Class="text-danger"></form:errors>
-								<tr>
-									<td><label for="foodName">Food Name</label></td>
-									<td><form:input path="foodName" class="text-box"
-											placaholder="foodName" title="Name must be required"
-											required="true" /></td>
-								</tr>
-								<form:errors path="foodName" Class="text-danger"></form:errors>
-								<tr>
-									<td><label for="foodPrice">Food Price</label></td>
-									<td><form:input path="foodPrice" class="text-box"
-											placaholder="foodPrice" title="foodPrice must be required"
-											required="true" /></td>
-								</tr>
-								<form:errors path="foodPrice" Class="text-danger"></form:errors>
+					<fieldset class="form-group">
+						<legend></legend>
+						<label><em class=""></em>Enter Food Id :</label> <input
+							type="text" class="form-control" name="foodId"
+							placeholder="Enter the Food Id" required="required">
 
-							</tbody>
-						</table>
-						<form:button id="log">Add New</form:button>
-						<button
-							style="font-size: 12px; background-color: #931314; color: #FFFFFF; float: center;"
-							onclick="history.back()">Go Back</button>
-					</div>
+					</fieldset>
+
+					<fieldset class="form-group">
+						<legend></legend>
+						<label><em class=""></em>Enter Food Name :</label> <input
+							type="text" class="form-control" name="foodName"
+							placeholder="Enter your Food Name" required="required">
+
+					</fieldset>
+
+
+					<fieldset class="form-group">
+						<legend></legend>
+						<label><em class=""></em>Enter Food Price :</label>
+						<input type="text" class="form-control" name="foodPrice"
+							placeholder="Enter your Food Price " required="required">
+					</fieldset>
+					<button type="submit" class="btn btn-success">Add new</button>
+
+					<button type="submit" class="btn btn-success"
+						onclick="history.back()">Go Back</button>
 				</form:form>
 			</div>
+
 		</div>
 	</div>
 </body>

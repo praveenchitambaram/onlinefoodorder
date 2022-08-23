@@ -19,7 +19,7 @@ import com.chainsys.onlinefoodorder.service.UserAdminService;
 @Controller
 @RequestMapping("/admin")
 
-public class UserAdimController {
+public class UserAdminController {
 	@Autowired
 	private UserAdminService userAdminService;
 
@@ -93,13 +93,15 @@ public class UserAdimController {
 	}
 
 	@PostMapping("/userlogin")
-	public String checkingAccess(@ModelAttribute("login") UserAdmin theUserAdmin) {
-		UserAdmin companyAdmin = userAdminService.getUserIdAndUserPassword(theUserAdmin.getUserId(),
+	public String checkingAccess(@ModelAttribute("login") UserAdmin theUserAdmin,Model model) {
+		UserAdmin companyAdmin = userAdminService.getEmailAndUserPassword(theUserAdmin.getEmail(),
 				theUserAdmin.getUserPassword());
 		if (companyAdmin != null) {
 			return "redirect:/admin/adminview";
-		} else
-			return "Invalid-user-error";
+		} else {
+	    	model.addAttribute("result", "Please enter the ValidEmail or password");
+	    }
+	        return "admin-login-form";
 	}
 		@GetMapping("/adminview")
 		public String getAdmin(Model model) {

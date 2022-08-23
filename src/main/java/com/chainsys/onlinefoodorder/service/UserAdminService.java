@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.chainsys.onlinefoodorder.dao.UserAdminRepository;
 import com.chainsys.onlinefoodorder.model.UserAdmin;
+import com.chainsys.onlinefoodorder.repository.UserAdminRepository;
 
 @Service
 public class UserAdminService {
@@ -30,7 +30,7 @@ public class UserAdminService {
 		userAdminRepository.deleteById(id);
 	}
 
-	public UserAdmin getUserIdAndUserPassword(int userId, String userPassword) {
-		return userAdminRepository.findByUserIdAndUserPassword(userId, userPassword);
+	public UserAdmin getEmailAndUserPassword(String email, String userPassword) {
+		return userAdminRepository.findByEmailAndUserPassword(email, userPassword);
 	}
 }

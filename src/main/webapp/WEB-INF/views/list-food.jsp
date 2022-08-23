@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <title>Item Management Application</title>
@@ -15,7 +15,7 @@
 	<header> <nav class="navbar navbar-expand-md navbar-dark"
 		style="background-color: tomato">
 	<div>
-		<a href="http://www.nacreservices.com" class="navbar-brand"> Item
+		<a href="#" class="navbar-brand"> Food
 			Management App </a>
 	</div>
 	</nav> </header>
@@ -38,14 +38,14 @@
 			<table class="table table-bordered">
 				<caption></caption>
 				<tr>
-					<th></th>
+					<th scope="row"></th>
 				</tr>
 				<thead>
 					<tr>
-						<th>ID</th>
-						<th>Food Name</th>
-						<th>Price</th>
-						<th>Actions</th>
+						<th scope="row">ID</th>
+						<th scope="row">Food Name</th>
+						<th scope="row">Price</th>
+						<th scope="row">Actions</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -62,7 +62,6 @@
 								href="/foodproduct/deletefoodproduct?foodproductid=${foodproduct.foodId}">Delete</a></td>
 						</tr>
 					</c:forEach>
-					<!-- } -->
 				</tbody>
 
 			</table>

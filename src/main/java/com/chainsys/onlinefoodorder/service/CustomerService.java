@@ -8,14 +8,14 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.chainsys.onlinefoodorder.dao.CustomerRepository;
-import com.chainsys.onlinefoodorder.dao.OrderDetailsRepository;
-import com.chainsys.onlinefoodorder.dao.OrderRepository;
 import com.chainsys.onlinefoodorder.model.Customer;
 import com.chainsys.onlinefoodorder.model.CustomerOrderDetailsDTO;
 import com.chainsys.onlinefoodorder.model.CustomerOrdersDTO;
 import com.chainsys.onlinefoodorder.model.Order;
 import com.chainsys.onlinefoodorder.model.OrderDetail;
+import com.chainsys.onlinefoodorder.repository.CustomerRepository;
+import com.chainsys.onlinefoodorder.repository.OrderDetailsRepository;
+import com.chainsys.onlinefoodorder.repository.OrderRepository;
 
 @Service
 public class CustomerService {
@@ -79,7 +79,7 @@ public class CustomerService {
 	public Customer getEmailAndPassword( String email,String password) {
 		return customerrepository.findByEmailAndPassword(email, password);
 	}
-	public Customer findByCustomerId(long id) {
+	public Customer findByCustomerId(int id) {
 		Customer customer = customerrepository.findByCustomerId(id);
         if (customer==null) {
             System.out.println("debug:product is null");

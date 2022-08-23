@@ -50,20 +50,20 @@
 		<table>
 			<caption></caption>
 			<tr>
-				<th></th>
+				<th scope="row"></th>
 			</tr>
 			<thead>
 				<tr>
-					<th>Order Id</th>
-					<th>customer Id</th>
-					<th>Order Date</th>
-					<th>Order Time</th>
-					<th>payment Type</th>
-					<th>order Amount</th>
-					<th>delivery Amount</th>
-					<th>net Amount</th>
-					<th>delivery Date</th>
-					<th>delivery Date</th>
+					<th scope="row">Order Id</th>
+					<th scope="row">customer Id</th>
+					<th scope="row">Order Date</th>
+					<th scope="row">Order Time</th>
+					<th scope="row">payment Type</th>
+					<th scope="row">order Amount</th>
+					<th scope="row">delivery Amount</th>
+					<th scope="row">net Amount</th>
+					<th scope="row">delivery Date</th>
+					<th scope="row">delivery Date</th>
 				</tr>
 			</thead>
 			<tbody>

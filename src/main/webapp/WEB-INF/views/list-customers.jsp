@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%-- <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%> --%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,14 +13,14 @@
 		<table>
 			<caption></caption>
 			<tr>
-				<th></th>
+				<th scope="row"></th>
 			</tr>
 			<thead>
 				<tr>
-					<th>Customer Id</th>
-					<th>Name</th>
-					<th>Contact Number</th>
-					<th>Email</th>
+					<th scope="row">Customer Id</th>
+					<th scope="row">Name</th>
+					<th scope="row">Contact Number</th>
+					<th scope="row">Email</th>
 
 				</tr>
 			</thead>
