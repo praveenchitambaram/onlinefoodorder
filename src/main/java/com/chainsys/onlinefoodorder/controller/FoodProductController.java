@@ -21,6 +21,7 @@ import com.chainsys.onlinefoodorder.service.FoodProductService;
 @RequestMapping("/foodproduct")
 
 public class FoodProductController {
+	public static final String FOODLIST="redirect:/foodproduct/foodlist";
 	@Autowired
 	FoodProductService foodProductService;
 
@@ -45,7 +46,7 @@ public class FoodProductController {
 			return "add-foodproduct-form";
 		}
 		foodProductService.save(theFoodProduct);
-		return "redirect:/foodproduct/foodlist";
+		return FOODLIST;
 	}
 
 	@GetMapping("/updateform")
@@ -62,14 +63,14 @@ public class FoodProductController {
 			return "update-foodproduct-form";
 		}
 		foodProductService.save(theFoodProduct);
-		return "redirect:/foodproduct/foodlist";
+		return FOODLIST;
 
 	}
 
 	@GetMapping("/deletefoodproduct")
 	public String deletefoodproduct(@RequestParam("foodproductid") int id) {
 		foodProductService.deleteById(id);
-		return "redirect:/foodproduct/foodlist";
+		return FOODLIST;
 	}
 
 	@GetMapping("/findfoodproductbyid")
